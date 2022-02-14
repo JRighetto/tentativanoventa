@@ -136,3 +136,28 @@ ajustar_cpf <- function(cpf){
 ajustar_cpf(cpf)
 cpf <- "34511378878"
 str_sub(cpf, end=3)
+
+#2. Transforme o vetor de strings abaixo em "01 - Alto" "02 - Médio" "03 - Baixo".
+
+n <- c("01 - ","02 - ","03 - ")
+s <- c('Alto', 'Médio', 'Baixo')
+str_c(n,s)
+# assim eu não sei se a intenção era algo tão simples quanto isso kkkkk mas enfim.
+
+# 3. Crie uma regex que capture múltiplas versões da palavra ‘casa’.
+# Ela deve funcionar com as palavras ‘Casa’, ‘CASA’, ‘CaSa’, ‘CAsa’. Teste-a usando a função str_detect().
+
+s <- c('Casa', 'CASA', 'CaSa', 'CAsa')
+str_detect(string = s, pattern = "(?i)casa")
+
+# 4. Imagine que a seguinte string é a parte final de uma URL.
+# /ac/rio-branco/xpto-xyz-1-0-1fds2396-5
+# Transforme-a em “AC - Rio Branco” utilizando funções do pacote {stringr}.
+
+url <- c('/ac/rio-branco/xpto-xyz-1-0-1fds2396-5')
+str_replace(url,"/ac/rio-branco","AC - Rio Branco")
+print("/ac/rio-branco")
+
+#eu to confusa com os lados das barras que são considerados regexs.
+#até porque eu não acho que o exercicio era tão simples assim.
+
